@@ -1,0 +1,72 @@
+
+/ about
+#about.about.text-center
+  .container
+    %h3 ABOUT ME
+    .strip.text-center
+      = fa_icon "user 2x"
+    %p
+      Raised in the Savanna for 17 years before I joined my family in the UK. Since then I have pursued the technology path never really knowing why until recently when I decided I would become a developer. After finishing graduating from University of East London, I joined WeGotCoders on an exciting 3 month boot camp. It was intensive… very intensive but also fun. 3 months later I finished and got a contract with WeGotCoders which is where I currently work as a Full Stack Developer. I have been enjoying it so far. But if you want to know more… you are going to have to ask me out :)
+    %ul
+      %li
+        = link_to (fa_icon "twitter-square 5x"), 'https://twitter.com/TafDev1', target: :_blank
+      %li
+        = link_to (fa_icon "linkedin-square 5x"), 'https://www.linkedin.com/in/tafadzwa-chombo-4a2a1086', target: :_blank
+      %li
+        = link_to (fa_icon "google-plus-square 5x"), 'https://plus.google.com/108147436784547706738', target: :_blank
+/ //about
+/ my skill
+.my-skills.text-center
+  .container
+    %h3 MY SKILLS
+    .strip.text-center
+      = fa_icon "cogs 2x"
+    .skill-grids
+      .col-md-2.skills-grid.text-center
+        #circles-1.circle{data: 70}
+        %p Ruby on Rails
+      .col-md-2.skills-grid.text-center
+        #circles-2.circle{data: 95}
+        %p HTML
+      .col-md-2.skills-grid.text-center
+        #circles-3.circle{data: 80}
+        %p CSS
+      .col-md-2.skills-grid.text-center
+        #circles-4.circle{data: 60}
+        %p JQuery
+      .col-md-2.skills-grid.text-center
+        #circles-5.circle{data: 40}
+        %p ReactJS
+      .col-md-2.skills-grid.text-center
+        #circles-6.circle{data: 50}
+        %p SQL
+      .clearfix
+      :javascript
+        var colors = [
+                ['#ffffff','#6ed4c0'], ['#ffffff','#6ed4c0'], ['#ffffff','#6ed4c0'], ['#ffffff','#6ed4c0'], ['#ffffff','#6ed4c0'], ['#ffffff','#6ed4c0']
+            ];
+        for (var i = 1; i <= 6; i++) {
+            var child = $('#circles-' + i);
+            var percentage = child.attr('data');
+            var id = child.attr('id');
+
+            Circles.create({
+                id:         id,
+                percentage: percentage,
+                radius:     80,
+                width:      10,
+                number:   	percentage / 1,
+                text:       '%',
+                colors:     colors[i - 1]
+            });
+        }
+/ //my skill
+-#= render "education"
+-#= render 'work'
+= render 'services'
+-#= render 'portfolio'
+-#= render 'process'
+-#= render 'testimonials'
+-#= render 'clients'
+-#= render 'blog'
+= render 'contact'

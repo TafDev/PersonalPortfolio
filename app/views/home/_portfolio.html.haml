@@ -1,0 +1,58 @@
+/ portfolio
+#portfolio.gallery-section.text-center
+  .container
+    %h3 PORTFOLIO
+    .strip.text-cente
+      = fa_icon "camera 2x"
+    %p
+      A little bit about what I have been up to in my spare time. I like working and improving on my applications. Some of these include works for clients I have worked with
+    .gallery-grids
+      .top-gallery
+        .col-md-4.gallery-grid.gallery1
+          = image_tag "p1.jpg"
+          .textbox
+            %h4 Project Name
+            %p WEB DESIGN
+            .button
+              = image_tag "p1.jpg"
+        .col-md-4.gallery-grid.gallery1
+          = image_tag "p2.jpg"
+          .textbox
+            %h4 Project Name
+            %p WEB DESIGN
+            .button
+              = image_tag "p2.jpg"
+        .col-md-4.gallery-grid.gallery1
+          = image_tag "p3.jpg"
+          .textbox
+            %h4 Project Name
+            %p WEB DESIGN
+            .button
+              = image_tag "p3.jpg"
+        .col-md-4.gallery-grid.gallery1
+          = image_tag "p4.jpg"
+          .textbox
+            %h4 Project Name
+            %p WEB DESIGN
+            .button
+              = image_tag "p4.jpg"
+        .col-md-4.gallery-grid.gallery1
+          = image_tag "p5.jpg"
+          .textbox
+            %h4 Project Name
+            %p WEB DESIGN
+            .button
+              = image_tag "p5.jpg"
+        .col-md-4.gallery-grid.gallery1
+          = image_tag "p6.jpg"
+          .textbox
+            %h4 Project Name
+            %p WEB DESIGN
+            .button
+              = image_tag "p6.jpg"
+        .clearfix
+      :javascript
+        jQuery(function($) {
+            $(".swipebox").swipebox();
+        });
+/ //portfolio

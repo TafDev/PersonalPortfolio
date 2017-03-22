@@ -1,0 +1,61 @@
+/ testimonials
+#testimonial.testimonials
+  .container
+    %h3 TESTIMONIAL
+    .strip.text-center
+      -#%img{:alt => " ", :src => "images/test.png"}/
+      = image_tag "test.png"
+    / responsiveslides
+    %script{:src => "js/responsiveslides.min.js"}
+    :javascript
+      // You can also use "$(window).load(function() {"
+      $(function () {
+       // Slideshow 4
+      $("#slider3").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+      $('.events').append("<li>before event fired.</li>");
+      },
+      after: function () {
+        $('.events').append("<li>after event fired.</li>");
+        }
+        });
+        });
+    / responsiveslides
+    #top.callbacks_container
+      %ul#slider3.rslides
+        %li
+          .test-banner
+            -#%img.quoa{:alt => "", :src => "images/quo2.png"}/
+            = image_tag "quo2.png"
+            .test-left
+              -#%img{:alt => "", :src => "images/7.png"}/
+              = image_tag "7.png"
+            .test-right
+              %p
+                However unreal it may seem, we are connected,
+                you and I. We're on the same curve, just on opposite ends.
+              %h4 Sam L. J. - Pulp Fiction
+            .clearfix
+            -#%img.quo{:alt => "", :src => "images/quo1.png"}/
+            = image_tag "quo1.png"
+        %li
+          .test-banner
+            -#%img.quoa{:alt => "", :src => "images/quo2.png"}/
+            = image_tag "quo2.png"
+            .test-left
+              -#%img{:alt => "", :src => "images/eee.png"}/
+              = image_tag "eee.png"
+            .test-right
+              %p
+                However unreal it may seem, we are connected,
+                you and I. We're on the same curve, just on opposite ends.
+              %h4 Sam L. J. - Pulp Fiction
+            .clearfix
+            -#%img.quo{:alt => "", :src => "images/quo1.png"}/
+            = image_tag "quo1.png"
+/ testimonials

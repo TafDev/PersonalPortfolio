@@ -1,0 +1,21 @@
+/ contact
+#contact.contact
+  .container
+    .contact-info.text-center
+      %h3 CONTACT
+      .strip.text-center
+        = fa_icon "comment 2x"
+    .contact-grids
+      .col-md-12.contact-right.text-center
+        %h3 I will respond to you as soon as I can. Don't be scared now
+        = form_for @contact do |f|
+          = notice
+          = @contact.errors.full_messages.join(', ')
+
+          = f.text_field :name, placeholder: "Name"
+          = f.text_field :email, placeholder: "Email"
+          = f.hidden_field :nickname
+          = f.text_area :message, placeholder: "Message"
+          = f.submit "Send"
+      -#.clearfix
+/ //contact

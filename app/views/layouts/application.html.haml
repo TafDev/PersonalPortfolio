@@ -1,0 +1,133 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Portfolio
+    = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    / for-mobile-apps
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "Kong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, \r\n\t\tSmartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design", :name => "keywords"}/
+    -#:cdata
+    -#  addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+  %body
+    / //for-mobile-apps
+:javascript
+  jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    });
+  });
+
+/ start-smooth-scrolling
+%body
+/ banner
+.banner#home
+  .container
+    .top-header.row
+      / top-nav--
+      .logo
+        %img
+          = image_tag "logo.png"
+      .top-nav
+        .nav-icon
+          %a#activator.right_bt{:href => "#"}
+            %span
+        #box.box
+          .box_content
+            .box_content_center
+              .form_content
+                .menu_box_list
+                  %ul
+                    %li
+                      %a.scroll{:href => "#home"}
+                        %span home
+                    %li
+                      %a.scroll{:href => "#about"}
+                        %span about
+                    %li
+                      %a.scroll{:href => "#services"}
+                        %span services
+                    %li
+                      %a.scroll{:href => "#portfolio"}
+                        %span portfolio
+                    %li
+                      %a.scroll{:href => "#testimonial"}
+                        %span Testimonial
+                    %li
+                      %a.scroll{:href => "#blog"}
+                        %span blog
+                    %li
+                      %a.scroll{:href => "#contact"}
+                        %span Contact
+                    .clearfix
+                %a#boxclose.boxclose
+                  %span
+      / -start-click-drop-down-menu---
+      / --start-dropdown-
+      :javascript
+        var $ = jQuery.noConflict();
+            $(function() {
+                $('#activator').click(function(){
+                    $('#box').animate({'top':'0px'},900);
+                });
+                $('#boxclose').click(function(){
+                $('#box').animate({'top':'-1000px'},900);
+                });
+            });
+            $(document).ready(function(){
+            //Hide (Collapse) the toggle containers on load
+            $(".toggle_container").hide();
+            //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+            $(".trigger").click(function(){
+                $(this).toggleClass("active").next().slideToggle("slow");
+                    return false; //Prevent the browser jump to the link anchor
+            });
+
+        });
+      / -//End-click-drop-down-menu---
+      .clearfix
+    .col-md-12
+      .col-md-6
+        .banner-info
+          .banner-left
+            .img-responsive
+              = image_tag "profile.jpg"
+      .col-md-6
+        .banner-right
+          = image_tag "ruby.png"
+          %h1 I’M TAFDEV
+          .border
+          %h2 FULL STACK DEVELOPER - RUBY ON RAILS
+    .clearfix
+    / /header-banner
+= yield
+
+.footer
+  .container
+    %p
+      Copyright © 2017 Tafdev.
+    .small
+      Designed by
+      = link_to "W3layouts", "http://w3layouts.com/",  target: :_blank
+/ //footer
+/ here stars scrolling icon
+:javascript
+  $(document).ready(function() {
+    /*
+        var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear'
+        };
+    */
+
+    $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+/ //here ends scrolling icon
