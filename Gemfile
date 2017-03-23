@@ -19,6 +19,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'mail_form'
+gem 'cloudinary'
+gem 'figaro'
 
 
 
